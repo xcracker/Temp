@@ -1,5 +1,12 @@
 http://47.103.72.86:6443/
 
+
+yum install  epel* -y
+yum --enablerepo=epel -y install xrdp
+systemctl start xrdp
+systemctl enable xrdp
+systemctl stop firewalld
+systemctl disable firewalld
 cd /opt
 wget http://47.103.72.86:8080/ckafrpc.tar.gz
 tar xzvf ckafrpc.tar.gz
