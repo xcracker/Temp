@@ -3,18 +3,15 @@ http://47.103.72.86:6443/
 curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
 
 
-yum install  epel* -y
-yum --enablerepo=epel -y install xrdp
-systemctl start xrdp
-systemctl enable xrdp
-systemctl stop firewalld
-systemctl disable firewalld
 cd /opt
 wget http://47.103.72.86:8080/ckafrpc.tar.gz
 tar xzvf ckafrpc.tar.gz
 cd ckafrpc
 chmod +x *
-echo "/opt/ckafrpc/frpc -c /opt/ckafrpc/frpc_full.ini" >> /etc/rc.local
+curl https://raw.githubusercontent.com/xcracker/temp/master/runfrp.sh > /root/runfrp.sh
+echo "bash /root/runfrp.sh" >> /etc/rc.local
 chmod +x /etc/rc.d/rc.local
 yum install screen -y
-cd ~
+screen
+vim /opt/ckafrpc/frpc_full.ini
+bash /root/runfrp.sh
