@@ -14,7 +14,7 @@ wget http://47.103.72.86:8080/ckafrpc.tar.gz
 tar xzvf ckafrpc.tar.gz
 cd ckafrpc
 chmod +x *
-echo "opt/frp_0.29.0_linux_386/frpc -c /opt/frp_0.29.0_linux_386/frpc_full.ini" >> /etc/rc.local
+echo "/opt/ckafrpc/frpc -c /opt/ckafrpc/frpc_full.ini" >> /etc/rc.local
 chmod +x /etc/rc.d/rc.local
 yum install screen -y
 cd ~
