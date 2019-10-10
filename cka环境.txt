@@ -1,3 +1,5 @@
+http://47.103.72.86:6443/
+
 cd /opt
 wget http://47.103.72.86:8080/ckafrpc.tar.gz
 tar xzvf ckafrpc.tar.gz
